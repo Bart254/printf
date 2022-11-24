@@ -12,6 +12,7 @@
 int _printf(const char *format, ...)
 {
 	char *str;
+	char c;
 	int n;
 	va_list ap;
 
@@ -31,8 +32,8 @@ int _printf(const char *format, ...)
 				}
 				if (*format == 'c')
 				{
-					str = va_arg(ap, char*);
-					write(1, str, 1);
+					c = va_arg(ap, int);
+					write(1, &c, 1);
 					n++;
 					break;
 				}
