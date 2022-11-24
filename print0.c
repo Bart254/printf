@@ -37,10 +37,8 @@ int _printf(const char *format, ...)
 					n++;
 					break;
 				}
-				write(1, format, 1);
-				n++;
-				}
 			}
+		}
 		else
 		{
 			write(1, format, 1);
