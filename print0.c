@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * p_int - prints an integer to stdout
