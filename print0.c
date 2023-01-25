@@ -113,6 +113,7 @@ int specifier(va_list *ap, const char **format)
 		write(STDOUT_FILENO, "%", 1);
 		*format = *format + 1;
 		n_printed = 1;
+		return (n_printed);
 	}
 	while (ptr[e])
 	{
