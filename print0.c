@@ -14,22 +14,23 @@ int p_int(va_list *ap, const char **format)
 	int i, q;
 	char *buffer;
 	char temp;
-	char sign;
-	size_t size = 1, e, r;
+	char sign = '+';
+	size_t size = 0, e, r;
 
 	i = va_arg(*ap, int);
 	if (i < 0)
 	{
 		i = 0 - i;
 		sign = '-';
-		if (i == 0)
-			size++;
+		size++;
 	}
 	if (i != 0)
 	{
 		for (q = i; q > 0; q /= 10)
 			size++;
 	}
+	else
+		size++;
 	buffer = malloc(size);
 	if (buffer == NULL)
 		return (-1);
