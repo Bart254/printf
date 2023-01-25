@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * specifier - handles conversion specifiers
@@ -16,6 +17,10 @@ int specifier(va_list *ap, const char **format)
 
 	switch (*((*format) + 1))
 	{
+		case '\0':
+			n_printed = -1;
+			*format = *format + 1;
+			break;
 		case '%':
 			buffer = "%";
 			write(STDOUT_FILENO, buffer, 1);
@@ -54,7 +59,7 @@ int specifier(va_list *ap, const char **format)
  */
 int _printf(const char *format, ...)
 {
-	int n = 0;
+	int n = 0, check;
 	va_list ap;
 
 	if (format == NULL)
@@ -64,7 +69,10 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			n += specifier(&ap, &format);
+			check = specifier(&ap, &format);
+			if (check == -1)
+				return (check);
+			n += check;
 			continue;
 		}
 		write(STDOUT_FILENO, format, 1);
