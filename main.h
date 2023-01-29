@@ -11,5 +11,6 @@ int p_int(va_list *ap, const char **format);
 int p_char(va_list *ap, const char **format);
 int p_str(va_list *ap, const char **format);
 void p_min(int *i, int *min);
+int p_bin(va_list *ap, const char **format);
 
 #endif
