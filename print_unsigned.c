@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * p_unsigned_int - writes unsigned int as decimal
  * @format: pointer format
@@ -62,11 +62,10 @@ int p_hex(va_list *ap, const char **format)
 	{
 		if (i % 16 > 9)
 		{
-			while (h < 6)
+			for (h = 0; h < 6; h++)
 			{
 				if (i % 16 == num[h])
 					buffer[e] = letters[h];
-				h++;
 			}
 		}
 		else
@@ -110,11 +109,10 @@ int p_HEX(va_list *ap, const char **format)
 	{
 		if (i % 16 > 9)
 		{
-			while (h < 6)
+			for (h = 0; h < 6; h++)
 			{
 				if (i % 16 == num[h])
 					buffer[e] = letters[h];
-				h++;
 			}
 		}
 		else
