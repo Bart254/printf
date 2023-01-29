@@ -30,6 +30,7 @@ int p_bin(va_list *ap, const char **format)
 		buffer[b] = temp;
 	}
 	write(STDOUT_FILENO, buffer, size);
+	free(buffer);
 	*format = *format + 1;
 	return (size);
 }
