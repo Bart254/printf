@@ -12,5 +12,9 @@ int p_char(va_list *ap, const char **format);
 int p_str(va_list *ap, const char **format);
 void p_min(int *i, int *min);
 int p_bin(va_list *ap, const char **format);
+int p_unsigned_int(va_list *ap, const char **format);
+int p_HEX(va_list *ap, const char **format);
+int p_hex(va_list *ap, const char **format);
+int p_octal(va_list *ap, const char **format);
 
 #endif
