@@ -9,10 +9,10 @@
 int specifier(va_list *ap, const char **format)
 {
 	int n_printed, e = 0;
-	char ptr[6] = {'d', 'i', 'c', 's', 'b'};
+	char ptr[10] = {'d', 'i', 'c', 's', 'b', 'o', 'u', 'X', 'x'};
 
-	int (*f[5])(va_list *, const char **) = {p_int,
-		p_int, p_char, p_str, p_bin};
+	int (*f[9])(va_list *, const char **) = {p_int,
+		p_int, p_char, p_str, p_bin, p_octal, p_unsigned_int, p_HEX, p_hex};
 	if (*(*format + 1) == '\0')
 	{
 		n_printed = -1;
