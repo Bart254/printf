@@ -23,7 +23,7 @@ int p_bin(va_list *ap, const char **format)
 		return (-1);
 	for (a = 0; a < size; a++, i /= 2)
 		buffer[a] = (i % 2) + '0';
-	for (a = 0, b = size -1; b > a; b--, a++)
+	for (a = 0, b = size - 1; b > a; b--, a++)
 	{
 		temp = buffer[a];
 		buffer[a] = buffer[b];
