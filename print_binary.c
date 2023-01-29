@@ -14,6 +14,8 @@ int p_bin(va_list *ap, const char **format)
 	char temp;
 
 	i = va_arg(*ap, int);
+	if (i == 0)
+		size = 1;
 	for (c = i; c > 0; c /= 2)
 		size++;
 	buffer = malloc(size);
